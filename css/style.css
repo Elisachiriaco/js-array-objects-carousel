@@ -75,3 +75,20 @@
 .prev {
   bottom: -20px;
 }
+
+.mybtn i{
+  position: absolute;
+  z-index: 10;
+  top: 65%;
+  left: 15%;
+  font-size: 50px;
+  color:rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: all 1s;
+}
+
+.mybtn i:hover{
+  color: white;
+  transform: scale(1.1, 1.1);
+  opacity: .9;
+}

@@ -82,6 +82,8 @@ thumbsContainer.innerHTML += thumbTemplate;
 //metto nelle variabili next e prev i due pulsanti
 const next = document.querySelector(" .fa-circle-chevron-down");
 const prev = document.querySelector(" .fa-circle-chevron-up");
+const stop = document.querySelector(".fa-circle-pause");
+
 //console.log(next, prev);
 function slideDown() {
   //prendere immagine con currentIndexActive e togliere classe active
@@ -120,5 +122,9 @@ function slideUp() {
 next.addEventListener("click", slideDown);
 prev.addEventListener("click", slideUp);
 
-
+const clock = setInterval(slideUp, 3000);
+stop.addEventListener("click", stopSlider);
+function stopSlider(){
+  clearInterval(clock);
+};
 
