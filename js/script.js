@@ -6,23 +6,35 @@ Dati tre array contenenti:
  - una lista di 5 news,
 creare un carosello come nella foto allegata.
 */
-const items = [
-  "img/01.jpg",
-  "img/02.jpg",
-  "img/03.jpg",
-  "img/04.jpg",
-  "img/05.jpg"
-];
+  const items = [
+      {
+          img: 'img/01.jpg',
+          titolo: 'Svezia',
+          testo: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.'
+      },
+      {
+          img: 'img/02.jpg',
+          titolo: 'Svizzera',
+          testo: 'Lorem ipsum'
+      },
+      {
+          img: 'img/03.jpg',
+          titolo: 'Gran Bretagna',
+          testo: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+      },
+      {
+          img: 'img/04.jpg',
+          titolo: 'Germania',
+          testo: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,'
+      },
+      {
+          img: 'img/05.jpg',
+          titolo: 'Paradise',
+          testo: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam'
+      }
+  ]
+  console.log(items);
 
-const title = ["Svezia", "Svizzera", "Gran Bretagna", "Germania", "Paradise"];
-
-const text = [
-  "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.",
-  "Lorem ipsum",
-  "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
-  "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,",
-  "Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,"
-];
 
 //variabile per raccogliere tutto l'html che va in items-container
 let itemTemplate = "";
@@ -41,15 +53,15 @@ for (let i = 0; i < items.length; i++) {
   }
   itemTemplate += `
   <div class="item ${classActive}">
-    <img src="${items[i]}" />
+    <img src="${items[i].img}" />
       <div class="title">
-        <h2>${title[i]}</h2>
-        <p>${text[i]}</p>
+        <h2>${items[i].titolo}</h2>
+        <p>${items[i].testo}</p>
       </div>
   </div>`;
   thumbTemplate += `
   <div class="thumb ${classActive}">
-    <img src="${items[i]}" alt="" />
+    <img src="${items[i].img}" alt="" />
   </div>`;
 }
 //console.log(thumbTemplate);
@@ -108,37 +120,5 @@ function slideUp() {
 next.addEventListener("click", slideDown);
 prev.addEventListener("click", slideUp);
 
-// Creazione array di oggetti
 
-function slider(){
-  const carousel = [
-      {
-          img: 'img/01.jpg',
-          titolo: 'Svezia',
-          testo: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.'
-      },
-      {
-          img: 'img/02.jpg',
-          titolo: 'Svizzera',
-          testo: 'Lorem ipsum'
-      },
-      {
-          img: 'img/03.jpg',
-          titolo: 'Gran Bretagna',
-          testo: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
-      },
-      {
-          img: 'img/04.jpg',
-          titolo: 'Germania',
-          testo: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,'
-      },
-      {
-          img: 'img/05.jpg',
-          titolo: 'Paradise',
-          testo: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam'
-      }
-  ]
-  console.log(carousel);
-}
-slider();
 
