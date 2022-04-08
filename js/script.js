@@ -123,8 +123,9 @@ next.addEventListener("click", slideDown);
 prev.addEventListener("click", slideUp);
 
 const clock = setInterval(slideUp, 3000);
-stop.addEventListener("click", stopSlider);
+// funzione per stoppare
 function stopSlider(){
   clearInterval(clock);
 };
+stop.addEventListener("click", stopSlider);
 
